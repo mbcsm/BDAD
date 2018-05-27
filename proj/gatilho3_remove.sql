@@ -1,2 +1,2 @@
 PRAGMA foreign_keys=ON;
-DROP TRIGGER SubstituicaoCheck;
+DROP TRIGGER CartaoCheck;

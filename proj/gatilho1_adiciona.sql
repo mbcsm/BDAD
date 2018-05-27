@@ -7,8 +7,7 @@ BEFORE INSERT ON JOGO
 FOR EACH ROW
 
 WHEN  	new.GolosCasa < 0 OR new.GolosFora < 0
-BEGIN
-	SELECT RAISE(rollback, "Golos não podem ser negativos");
+THEN RAISE(ABORT, 'Golos não podem ser negativos')
 END;
 
 
