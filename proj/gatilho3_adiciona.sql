@@ -10,5 +10,6 @@ WHEN  	(SELECT count(*)
         AND JOGADOR.idJogador = EVENTO.idJogador
         GROUP BY EVENTO.idJogo, JOGADOR.idEquipa) > 1
 
-THEN RAISE(ABORT, 'um jogador pode receber um vermelho Por Jogo')
+BEGIN
+	SELECT RAISE(rollback, "um jogador pode receber um vermelho Por Jogo");
 END;
